@@ -1,0 +1,316 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+/* Sidebar Styling */
+.sidebar {
+    height: 100%;
+    width: 250px;
+    position: fixed;
+    top: 0;
+    left: -250px;
+    background: linear-gradient(180deg, #1e1e2f, #111);
+    box-shadow: 4px 0 15px rgba(0, 0, 0, 0.5);
+    overflow-y: auto;
+    transition: all 0.5s ease;
+    padding-top: 60px;
+    z-index: 999;
+}
+
+
+.logo {
+    text-align: center;
+    padding: 0px;
+}
+
+.logo img {
+    width: 80%;
+    max-width: 100px;
+    height: auto;
+}
+
+.sidebar .close-btn {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    font-size: 24px;
+    color: white;
+    cursor: pointer;
+}
+
+.openmenu {
+    font-size: 24px;
+    position: fixed;
+    top: 15px;
+    left: 15px;
+    cursor: pointer;
+    z-index: 2;
+    display: block;
+    background-color: white;
+}
+
+.openmenu:hover {
+    background-color: #ddd;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transform: scale(1.1);
+}
+
+.openmenu span {
+    display: block;
+    width: 30px;
+    height: 3px;
+    background-color: #333;
+    margin: 5px 0;
+    transition: 0.3s;
+}
+
+.openmenu.open span:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+}
+
+.openmenu.open span:nth-child(2) {
+    opacity: 0;
+}
+
+.openmenu.open span:nth-child(3) {
+    transform: rotate(-45deg) translate(5px, -5px);
+}
+
+/* Main Content */
+.main-content {
+    margin-left: 0;
+    transition: margin-left 0.5s ease;
+}
+
+iframe {
+    width: 100%;
+    height: 90%;
+    border: none;
+}
+
+
+
+/* Accordion Styling */
+.accordion-button {
+    background-color: #222;
+    color: white;
+    border: none;
+    font-weight: bold;
+    transition: 0.3s;
+    border-radius: 10px;
+}
+
+.accordion-button:hover {
+    background-color: #333;
+    color: #fff;
+}
+
+.accordion-body {
+    background-color: #a2b9bc;
+}
+
+.accordion-body a {
+    display: block;
+    color: #ddd;
+    text-decoration: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    transition: 0.3s;
+}
+
+.accordion-body a:hover {
+    background-color: #444;
+    color: white;
+}
+
+/* Carousel Styling */
+.carousel {
+    width: 100%;
+    overflow: hidden; /* Prevent overflow during scaling */
+    position: relative;
+}
+
+.carousel-inner {
+    width: 100%;
+    position: relative;
+    overflow: hidden; /* Ensure no content overflows */
+}
+
+.carousel-inner img {
+    width: 100%;            /* Full width */
+    height: 300px;          /* Fixed height */
+    object-fit: cover;      /* Cover the container while maintaining aspect ratio */
+    display: block;         /* Avoid inline spacing issues */
+}
+
+/* Carousel Caption */
+.carousel-caption {
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 10px;
+    border-radius: 5px;
+    color: white;
+    text-align: center;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 90%;
+    max-width: 600px;
+}
+
+.button-group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+    margin-top: 20px;
+}
+/* Include your CSS here */
+.btn-primary {
+    background-color: #333;
+    color: #fff; /* Primary blue */
+    border: 2px solid #fff;
+    border-radius: 20px;
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: 500;
+    text-transform: capitalize;
+    transition: all 0.3s ease-in-out;
+}
+
+.btn-primary:hover {
+    background-color: #333;
+    color: #fff; 
+    transform: translateY(-2px);
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+/* Optionally, you can add a class to hide buttons initially */
+.btn-primary.hidden {
+    display: none;
+}
+
+/* Include your CSS here */
+.custom-btn{
+    background-color: #f8f9fa; /* Light gray */
+    color: #007bff; /* Primary blue */
+    border: 2px solid #007bff;
+    border-radius: 20px;
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: 500;
+    text-transform: capitalize;
+    transition: all 0.3s ease-in-out;
+}
+
+.custom-btn:hover{
+    background-color: #007bff;
+    color: #ffffff;
+    transform: translateY(-2px);
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+        /* Optionally, you can add a class to hide buttons initially */
+.custom-btn.hidden {
+    display: none;
+}
+.active {
+    background-color: #007bff !important;
+    color: #fff;
+    border-color: #007bff;
+}
+        
+/* Responsive Adjustments */
+@media (min-width: 1200px) {
+    .carousel-inner img {
+        height: 300px; /* Ensure consistent height */
+    }
+}
+
+@media (max-width: 768px) {
+    .carousel-inner img {
+        height: 300px; /* Ensure consistent height */
+    }
+}
+
+@media (max-width: 480px) {
+    .carousel-inner img {
+        height: 300px; /* Ensure consistent height */
+    }
+}
+.btn-active {
+    background-color: #007bff;
+    color: white;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+    transform: translateY(-2px);
+}
+
+/* Modal styling */
+.modal-content {
+    border-radius: 12px;
+    padding: 20px;
+    background-color: #ffffff;
+    box-shadow: 0px 12px 20px rgba(0, 0, 0, 0.1);
+}
+
+.modal-header {
+    border-bottom: 2px solid #f1f1f1;
+}
+
+.modal-title {
+    font-size: 24px;
+    font-weight: bold;
+    color: #007bff;
+    text-align: center !important; /* Force center if needed */
+}
+
+.modal-body {
+    padding: 20px;
+}
+
+.modal-footer {
+    border-top: 2px solid #f1f1f1;
+}
+
+/* List styling */
+#contentList {
+    list-style: none;
+    padding-left: 0;
+}
+
+#contentList li {
+    margin: 15px 0;
+}
+
+#contentList li a {
+    text-decoration: none;
+    color: #007bff;
+    font-size: 18px;
+    font-weight: 500;
+    display: block;
+    padding: 10px;
+    transition: all 0.3s ease;
+}
+
+#contentList li a:hover {
+    color: #ffffff;
+    background-color: #007bff;
+    border-radius: 8px;
+    transform: translateX(8px);
+    padding-left: 15px;
+}
+
+/* Style for active button */
+button.active {
+    background-color: #007bff;  /* Change background to blue */
+    color: white;                /* Change text color to white */
+    border: 2px solid #0056b3;  /* Add a border to highlight the active button */
+    font-weight: bold;           /* Make text bold for emphasis */
+}
+
+footer {
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+
